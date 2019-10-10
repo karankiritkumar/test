@@ -13,6 +13,9 @@ public class MipsCCompiler
 		this.theDataMemory = new DataMemory(200000);
 		this.theRegisterCollection = new RegisterCollection(16);
 		String instruction;
+		
+		
+		
 		String output;
 		while(true)
 		{
