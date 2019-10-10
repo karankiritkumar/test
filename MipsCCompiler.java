@@ -12,10 +12,26 @@ public class MipsCCompiler
 		this.theSrc = new SrcReader(filename);
 		this.theDataMemory = new DataMemory(200000);
 		this.theRegisterCollection = new RegisterCollection(16);
+		VariableList vars = new VariableList();
+		String currLine = this.theSrc.getNextLine();
+		while (!currLine.contentEquals("EOF"))
+		{			
+			String[] words = currLine.replaceAll(";", "").split(" ");
+			if (words[0].contentEquals("int")) {
+				vars.Assign(words[1], this.theRegisterCollection, this.theDataMemory);
+			
+				System.out.println("Addi " + p.getValue0() + ", $zero, " + p.getValue1());
+			} else {
+				String[] arr = currLine.replaceAll("[; ]", "").split("=");
+				String left = arr[0];
+				String right = arr[1];
+			
+			}
+			currLine = this.theSrc.getNextLine();=
+		}
+	}
+
 		String instruction;
-		
-		
-		
 		String output;
 		while(true)
 		{
