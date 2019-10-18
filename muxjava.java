@@ -3,24 +3,28 @@ public class muxjava
 {
 	
 	
-	private void DisplayTabble(String[] input) 
+	public class muxjava
 	{
+		private String selector = "j";
+		public void DisplayTabble(String[] input)
+		{
+			int selectorCount = 0;
+			int support = 1;
+			while(support < input.length)
+			{
+				selectorCount++;
+				support *= 2;
+			}
+			if (selectorCount == 0) {
+				selectorCount = 1;
+			}
+			String output = "";
+			if (input.length > 0) {
+				for(int i = 0; i < selectorCount; j++) 
+					output += selector + i + "\t";
+			
+			System.out.print(output);
+		}
 		
-		
+		j
 	}
-	
-	
-	
-	
-public public static void main(String[] args) 
-{
-	muxjava j = new muxjava();
-	String[] input = new String[] { "a0","a1","a2","a3","a4"};
-	j.DisplayTabble(input);
-	
-	
-	
-}
-
-
-}
